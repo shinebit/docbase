@@ -56,12 +56,12 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v Fli
     1. 修改限制的大小，最大修改为：4294967295（0xffffffff）字节，即4G
     1. 修改好后，再选择hexadecimal（十六进制）
 
-## 个性化设置
-- Win10任务栏透明,0-9对应十个透明等级,0为全透明
+## Win10任务栏透明
 ```batch
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v "TaskbarAcrylicOpacity" /t "REG_DWORD" /d "0"
 ```
-- Win11使用旧版右键菜单
+
+## Win11使用旧版右键菜单
 ```batch
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /f
 ```

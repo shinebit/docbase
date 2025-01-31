@@ -22,17 +22,17 @@ rsync [options] source destination
 指定远程 shell 命令（例如使用 SSH）。常用于设置远程传输时的连接方式。
 
 ### 示例命令
-1. 基本本地备份
+基本本地备份
 ```bash
 rsync -av /source/ /destination/
 ```
 
-1. 删除目标中不存在于源目录的文件
+删除目标中不存在于源目录的文件
 ```bash
 rsync -av --delete /source/ /destination/
 ```
 
-1. 远程备份（使用 SSH）
+远程备份（使用 SSH）
 ```bash
 rsync -av -e ssh /source/ user@remote:/destination/
 ```

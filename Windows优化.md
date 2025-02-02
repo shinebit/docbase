@@ -46,22 +46,3 @@ slmgr /ato
 ```batch
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v FlightSettingsMaxPauseDays /t reg_dword /d 5000 /f
 ```
-
-## 自带WebDAV Client问题
-- 无法连接问题 默认不支持http
-    1. 定位注册表 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters`。双击右侧界面中的 `BasicAuthLevel` 条目，将数值数据修改为“`2`”，点击确定后关闭注册表编辑器。
-    1. 重启`WebClient`服务
-- 解决Windows默认限制为50MB文件大小 超出不允许复制
-    1. 定位注册表 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters`找到FileSizeLimitInBytes，双击打开，在打开的设置窗口，选择decimal（十进制）
-    1. 修改限制的大小，最大修改为：4294967295（0xffffffff）字节，即4G
-    1. 修改好后，再选择hexadecimal（十六进制）
-
-## Win10任务栏透明
-```batch
-reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v "TaskbarAcrylicOpacity" /t "REG_DWORD" /d "0"
-```
-
-## Win11使用旧版右键菜单
-```batch
-reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /f
-```

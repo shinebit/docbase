@@ -29,6 +29,11 @@ Dism /Online /Disable-Feature /FeatureName:WindowsMediaPlayer /Remove /NoRestart
 pause
 ```
 
+## 任意更改系统更新暂停的时间
+```batch
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v FlightSettingsMaxPauseDays /t reg_dword /d 5000 /f
+```
+
 ## 激活系统
 产品密钥：[通用批量许可证密钥](https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys#generic-volume-license-keys-gvlk)  
 win10/11专业版KMS激活
@@ -40,9 +45,4 @@ slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms.03k.org
 
 slmgr /ato
-```
-
-## 任意更改系统更新暂停的时间
-```batch
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v FlightSettingsMaxPauseDays /t reg_dword /d 5000 /f
 ```

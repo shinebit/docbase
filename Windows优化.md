@@ -1,3 +1,10 @@
+## 启用Administrator帐户并注销切换到登录屏幕
+```batch
+net user administrator /active:yes
+shutdown /l
+pause
+```
+
 ## 禁用模块
 ```batch
 ::关闭快速启动

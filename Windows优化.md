@@ -1,8 +1,6 @@
-## 启用Administrator帐户并注销切换到登录屏幕
+## 启用Administrator帐户
 ```batch
 net user administrator /active:yes
-shutdown /l
-pause
 ```
 
 ## 禁用模块

@@ -14,7 +14,7 @@ cache-on-disk=no
 sub-auto=fuzzy
 
 #设置默认打开的窗口大小
-geometry=50%x50%+50%+50%
+geometry=60%x60%+50%+50%
 #启动默认音量
 volume=100
 #程序最大音量
